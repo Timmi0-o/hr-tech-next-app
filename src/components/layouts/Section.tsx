@@ -6,7 +6,10 @@ interface SectionProps extends HTMLAttributes<HTMLDivElement> {
 
 export const Section = ({ children, ...props }: SectionProps) => {
 	return (
-		<div {...props} className={`px-[4.931vw] ` + props.className}>
+		<div
+			{...props}
+			className={`px-[0.977vw] xl:px-[4.931vw] ` + props.className}
+		>
 			{children}
 		</div>
 	)

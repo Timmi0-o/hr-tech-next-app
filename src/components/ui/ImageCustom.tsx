@@ -8,7 +8,11 @@ interface ImageCustomProps extends ImageProps {
 
 export const ImageCustom = ({ size, src, alt, ...props }: ImageCustomProps) => {
 	return (
-		<div className={`relative ${size ? size : 'size-[1.111vw]'} `}>
+		<div
+			className={`relative ${
+				size ? size : 'size-[1.563vw] xl:size-[1.111vw]'
+			} `}
+		>
 			<Image {...props} src={src} fill alt={alt ? alt : src} />
 		</div>
 	)

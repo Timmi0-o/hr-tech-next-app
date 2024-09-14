@@ -9,7 +9,7 @@ interface TextInfoProps extends HTMLAttributes<HTMLDivElement> {
 	gap?: string
 }
 
-export const Text = ({
+export const TextPlusImg = ({
 	children,
 	img,
 	alt,
@@ -21,11 +21,16 @@ export const Text = ({
 		<div
 			{...props}
 			className={
-				`flex items-center ${gap ? gap : 'gap-[0.556vw]'} text-[0.972vw] ` +
-				props.className
+				`flex items-center w-fit ${
+					gap ? gap : 'gap-[0.556vw]'
+				} text-[1.367vw] xl:text-[0.972vw] ` + props.className
 			}
 		>
-			<div className={`relative ${imgSize ? imgSize : 'size-[1.111vw]'}`}>
+			<div
+				className={`relative ${
+					imgSize ? imgSize : 'size-[1.563vw] xl:size-[1.111vw]'
+				}`}
+			>
 				<Image src={img} fill alt={alt ? alt : img} />
 			</div>
 			{children}
