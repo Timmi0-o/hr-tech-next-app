@@ -9,6 +9,10 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			gridTemplateColumns: {
+				'custom-5': '1fr 3fr 1fr 1fr 1fr',
+				'custom-8': '1fr 1fr 1fr 1fr 1.5fr 1fr 1fr 1fr',
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
