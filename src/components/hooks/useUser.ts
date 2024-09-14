@@ -1,7 +1,16 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 export const useUser = () => {
+	const router = useRouter()
+	useEffect(() => {
+		if (!localStorage.getItem('token')) {
+			router.push('/auth')
+		}
+	}, [router])
+
 	const GET_USER = gql`
 		query {
 			myProfile {

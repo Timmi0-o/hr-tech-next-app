@@ -41,7 +41,7 @@ export function LoginForm() {
 	useEffect(() => {
 		if (data?.login?.access_token) {
 			localStorage.setItem('token', data.login.access_token)
-			router.push('/profile')
+			router.push('/')
 		}
 	}, [data, router])
 
@@ -49,7 +49,7 @@ export function LoginForm() {
 		if (window && localStorage) {
 			const token = localStorage.getItem('token')
 			if (token) {
-				router.push('/profile')
+				router.push('/')
 			}
 		}
 	}, [router])
