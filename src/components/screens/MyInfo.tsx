@@ -23,7 +23,6 @@ export const MyInfo = () => {
 	return (
 		<div className='relative bg-white sm:bg-[#F0F3F8] min-h-[87.9vh] pt-[1.389vw] pb-[4.167vw]'>
 			<div className='absolute top-0 left-0 w-full h-[49.063vw] sm:h-[13.9vw] xl:h-[12.778vw] bg-primaryBlue'></div>
-
 			<div className='relative z-10'>
 				<Section className='flex justify-center flex-row gap-[1.736vw]'>
 					{/* SIDEBAR  */}
@@ -98,7 +97,7 @@ export const MyInfo = () => {
 											setIsDirectReportsPeoplesFull(!isDirectReportsPeoplesFull)
 										}
 										img='/svg/teams.svg'
-										className='cursor-pointer'
+										className='cursor-pointer active:bg-[#e0e0e0] rounded-[0.2vw]'
 									>
 										{isDirectReportsPeoplesFull
 											? 'role up'
@@ -109,7 +108,7 @@ export const MyInfo = () => {
 						</div>
 					</div>
 					{/* CONTENT  */}
-					<div className='w-[85vw] sm:w-[72.708vw] mt-[3vw] sm:mt-[1vw]'>
+					<div className='w-[89vw] sm:w-[72.708vw] mt-[7.5vw] sm:mt-[2.5vw] lg:mt-[3vw]'>
 						<header className='flex items-center justify-between mb-[2.261vw]'>
 							{/* AVATAR ONLY MOBILE  */}
 							<div className='block sm:hidden size-[18.75vw] mr-[6.875vw]'>
@@ -122,21 +121,22 @@ export const MyInfo = () => {
 							</div>
 							{/* NAME & (TREE DOTS ONLY MOBILE)  */}
 							<div className='flex justify-between items-center'>
-								<h1 className='text-[6.25vw] sm:text-[3vw] lg:text-[1.944vw] font-semibold'>
+								<h1 className='text-[6.25vw] sm:text-[3vw] lg:text-[1.944vw] font-semibold w-fit'>
 									Alexandra Kuibyshevskaya
 								</h1>
-								<ImageCustom
-									className='block sm:hidden'
-									size='size-[5vw]'
-									src='/svg/three-dots.svg'
-									alt='dots'
-								/>
+								<div className='flex justify-center items-center size-[8vw] rounded-full active:bg-white duration-200 ease-in-out sm:hidden'>
+									<ImageCustom
+										size='size-[5vw]'
+										src='/svg/three-dots.svg'
+										alt='dots'
+									/>
+								</div>
 							</div>
 							<div className='hidden sm:flex gap-[1.111vw]'>
-								<DropMenu>
+								<DropMenu noBg>
 									<p>Request a Change</p>
 								</DropMenu>
-								<DropMenu>
+								<DropMenu noBg>
 									<ImageCustom src={'/svg/setting.svg'} alt='setting' />
 								</DropMenu>
 							</div>
@@ -170,6 +170,7 @@ export const MyInfo = () => {
 									>
 										More
 									</TextPlusImg>
+
 									<div
 										className={`absolute flex flex-col items-center border w-[10vw] bg-[#DAE6F2] rounded-es-[0.556vw] rounded-ee-[0.556vw] gap-[0.694vw] duration-200 ease-in-out ${
 											isMoreInfoLinks ? '' : 'invisible opacity-0'
@@ -191,7 +192,7 @@ export const MyInfo = () => {
 								</div>
 							</div>
 							{/* TITLES MOBILE*/}
-							<div className='block sm:hidden mt-[11.5vw]'>
+							<div className='block sm:hidden mt-[7.5vw]'>
 								<Swiper slidesPerView={3.1} spaceBetween={10}>
 									<div className='flex'>
 										{infoLinks.map((link, i) => (
@@ -201,7 +202,7 @@ export const MyInfo = () => {
 														setInfoNavigateIsActive(i)
 														localStorage.setItem('myInfoNavigate', i.toString())
 													}}
-													className={`flex items-center h-[15.313vw] rounded-ss-[2.5vw] rounded-se-[2.5vw] transition-colors duration-300 px-[1.111vw] cursor-pointer ${
+													className={`flex justify-center items-center h-[15.313vw] rounded-ss-[2.5vw] rounded-se-[2.5vw] transition-colors duration-300 px-[1.111vw] cursor-pointer ${
 														infoNavigateIsActive === i ? 'bg-white' : ''
 													}`}
 												>

@@ -26,7 +26,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 				onFocus={() => setFocusStyle('border-[0.069vw] border-black')}
 				onBlur={() => setFocusStyle('')}
 				className={cn(
-					`flex gap-[1.667vw] items-center h-[5vw] sm:h-[2.778vw] w-full rounded-[0.833vw] border-[0.069vw] border-input bg-background px-[0.833vw] py-[0.556vw] ring-offset-background file:border-0 file:bg-transparent file:font-medium placeholder:text-muted-foreground ${focusStyle} ${
+					`flex gap-[1.667vw] items-center h-[5vw] sm:h-[2.778vw] w-full rounded-[1.25vw] sm:rounded-[0.833vw] border-[0.069vw] border-input bg-background px-[0.833vw] py-[0.556vw] ring-offset-background file:border-0 file:bg-transparent file:font-medium placeholder:text-muted-foreground ${focusStyle} ${
 						disabled ? 'cursor-not-allowed select-none  opacity-50' : ''
 					}`,
 					containerClassName

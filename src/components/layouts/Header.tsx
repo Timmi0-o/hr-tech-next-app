@@ -109,8 +109,10 @@ export const Header = () => {
 					>
 						<div
 							className={`relative ${
+								i === 0 || i === 1 ? 'hidden sm:block' : ''
+							} ${
 								i + 1 === actionButtons.length
-									? 'size-[8vw] sm:size-[2.639vw]'
+									? 'size-[8vw] sm:size-[2.639vw] active:opacity-50'
 									: 'size-[4vw] sm:size-[1.667vw]'
 							}`}
 						>
@@ -120,9 +122,8 @@ export const Header = () => {
 								<div className='size-[2.639vw] bg-[#dbdbdb] rounded-full'></div>
 							)}
 						</div>
-
 						<div
-							className={`flex items-center justify-center absolute z-20 top-[5vw] sm:top-[2.778vw] left-[-3.556vw] w-[16.833vw] bg-[#f3f3f3] rounded-[0.833vw] duration-300 px-[1.389vw] py-[2.083vw] ${
+							className={`flex flex-col sm:flex-row items-center justify-center absolute z-20 top-[9vw] sm:top-[2.778vw] left-[-3.556vw] w-[25vw] sm:w-[16.833vw] bg-[#f3f3f3] rounded-[0.833vw] duration-300 px-[1.389vw] py-[2.083vw] ${
 								actionButtonIsActive === i
 									? ''
 									: 'invisible opacity-0 mt-[1.389vw]'
@@ -138,6 +139,28 @@ export const Header = () => {
 							>
 								Log Out
 							</Button>
+							<div className='sm:hidden flex flex-col gap-[2vw] w-full mt-[2vw]'>
+								<Button
+									onClick={() => {
+										router.push('/auth')
+										localStorage.removeItem('token')
+										localStorage.removeItem('headerNavigateNum')
+									}}
+									className='w-full'
+								>
+									Settings
+								</Button>
+								<Button
+									onClick={() => {
+										router.push('/auth')
+										localStorage.removeItem('token')
+										localStorage.removeItem('headerNavigateNum')
+									}}
+									className='w-full'
+								>
+									Support
+								</Button>
+							</div>
 						</div>
 					</div>
 				))}

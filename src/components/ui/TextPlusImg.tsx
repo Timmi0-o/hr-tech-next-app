@@ -24,7 +24,9 @@ export const TextPlusImg = ({
 			{...props}
 			className={
 				`flex items-center w-fit ${gap ? gap : 'gap-[0.556vw]'} ${
-					textSize ? textSize : 'text-[3vw] sm:text-[1.367vw] xl:text-[0.972vw]'
+					textSize
+						? textSize
+						: 'text-[3vw] sm:text-[1.367vw] xl:text-[0.972vw] '
 				} ` + props.className
 			}
 		>
