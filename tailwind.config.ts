@@ -11,6 +11,8 @@ const config: Config = {
 		extend: {
 			gridTemplateColumns: {
 				'custom-5': '1fr 3fr 1fr 1fr 1fr',
+				'custom-5-lg': '1fr 2fr 1fr 1fr 1fr',
+				'custom-5-xs': '1fr 1fr 1fr 1fr 1fr',
 				'custom-8': '1fr 1fr 1fr 1fr 1.5fr 1fr 1fr 1fr',
 			},
 			backgroundImage: {
