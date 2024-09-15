@@ -176,9 +176,9 @@ export const TimeOff = () => {
 					</div>
 				</div>
 				{/* table mobile */}
-				<div>
+				<div className='block sm:hidden'>
 					{/* TITLES  */}
-					<div className='h-[3.403vw] bg-[#DAE6F2] grid sm:hidden grid-cols-custom-5-xs justify-start items-center pl-[0.556vw]'>
+					<div className='h-[3.403vw] bg-[#DAE6F2] grid grid-cols-custom-5-xs justify-start items-center pl-[0.556vw]'>
 						{tableTitles.map((title, i) =>
 							title.img ? (
 								<TextPlusImg
