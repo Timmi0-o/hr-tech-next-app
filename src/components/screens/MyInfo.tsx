@@ -18,7 +18,7 @@ export const MyInfo = () => {
 	const [isMoreInfoLinks, setIsMoreInfoLinks] = useState(false)
 
 	const [infoNavigateIsActive, setInfoNavigateIsActive] = useState<number>(
-		Number(localStorage.getItem('myInfoNavigate')) | 0
+		window ? Number(localStorage.getItem('myInfoNavigate')) : 2
 	)
 	return (
 		<div className='relative bg-white sm:bg-[#F0F3F8] min-h-[87.9vh] pt-[1.389vw] pb-[4.167vw]'>
@@ -149,7 +149,8 @@ export const MyInfo = () => {
 										key={i}
 										onClick={() => {
 											setInfoNavigateIsActive(i)
-											localStorage.setItem('myInfoNavigate', i.toString())
+											window &&
+												localStorage.setItem('myInfoNavigate', i.toString())
 										}}
 										className={`flex items-center h-[3.194vw] rounded-ss-[0.556vw] rounded-se-[0.556vw] transition-colors duration-300 px-[1.111vw] cursor-pointer ${
 											infoNavigateIsActive === i ? 'bg-white' : ''
@@ -200,7 +201,11 @@ export const MyInfo = () => {
 												<div
 													onClick={() => {
 														setInfoNavigateIsActive(i)
-														localStorage.setItem('myInfoNavigate', i.toString())
+														window &&
+															localStorage.setItem(
+																'myInfoNavigate',
+																i.toString()
+															)
 													}}
 													className={`flex justify-center items-center h-[15.313vw] rounded-ss-[2.5vw] rounded-se-[2.5vw] transition-colors duration-300 px-[1.111vw] cursor-pointer ${
 														infoNavigateIsActive === i ? 'bg-white' : ''

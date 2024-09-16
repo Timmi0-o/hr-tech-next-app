@@ -72,12 +72,12 @@ export const People = () => {
 								))}
 							</div>
 							{/* MOBILE NAV  */}
-							<div className='flex sm:hidden gap-[2vw] items-center translate-y-[-14vw]'>
+							<div className='flex sm:hidden gap-[0.5vw] sm:gap-[2vw] items-center translate-y-[-14vw]'>
 								{peopleNavigation.map((nav, i) => (
 									<div
 										onClick={() => setPeopleNavIsActive(i)}
 										key={i}
-										className={`flex items-center justify-center gap-[0.833vw] h-[15vw] w-[18vw] rounded-[2vw] cursor-pointer duration-300 ease-in-out ${
+										className={`flex items-center justify-center gap-[0.833vw] h-[12vw] w-[18vw] px-[1vw] rounded-[2vw] cursor-pointer duration-300 ease-in-out ${
 											peopleNavIsActive === i ? 'bg-[#F0F3F8]' : ''
 										}`}
 									>
@@ -95,7 +95,7 @@ export const People = () => {
 					{/* PEOPLE FILTERS  */}
 					<div className='flex items-center justify-between mt-[1.667vw]'>
 						<div className='flex items-center gap-[1.111vw]'>
-							<div className='flex items-center justify-center size-[2.93vw] xl:size-[2.292vw] bg-white rounded-[0.391vw] xl:rounded-[0.278vw]'>
+							<div className='flex items-center justify-center size-[5vw] sm:size-[2.93vw] xl:size-[2.292vw] bg-white rounded-[1vw] sm:rounded-[0.391vw] xl:rounded-[0.278vw]'>
 								<ImageCustom
 									className='cursor-pointer'
 									src='/svg/setting-extend.svg'
@@ -103,7 +103,7 @@ export const People = () => {
 								/>
 							</div>
 							<DropInput
-								className='w-[40vw] sm:w-[17.778vw]'
+								className='w-[37vw] sm:w-[17.778vw]'
 								placeholder='Manager'
 							/>
 							<TextPlusImg img='/svg/teams.svg'>26</TextPlusImg>
@@ -114,7 +114,7 @@ export const People = () => {
 							</p>
 							<DropInput
 								noCloseButton
-								className='w-[17vw] sm:w-[12.531vw] xl:w-[7.222vw]'
+								className='w-[23vw] sm:w-[12.531vw] xl:w-[7.222vw]'
 								placeholder='Active'
 							/>
 							<DropMenu>

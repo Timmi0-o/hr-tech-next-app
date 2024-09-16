@@ -12,7 +12,7 @@ export const Header = () => {
 	const router = useRouter()
 	const { user: profile } = useUser()
 	const [navigateIsActive, setNavigateIsActive] = useState<number>(
-		Number(localStorage.getItem('headerNavigateNum')) || 0
+		(window ? Number(localStorage.getItem('headerNavigateNum')) : 1) || 1
 	)
 	const [navigateMobile, setNavigateMobile] = useState(false)
 	const [actionButtonIsActive, setActionButtonIsActive] = useState<
@@ -53,7 +53,8 @@ export const Header = () => {
 								<div
 									onClick={() => {
 										setNavigateIsActive(i)
-										localStorage.setItem('headerNavigateNum', i.toString())
+										window &&
+											localStorage.setItem('headerNavigateNum', i.toString())
 										setNavigateMobile(false)
 									}}
 									className={`flex items-center justify-center h-[3.75vw] px-[1.111vw] rounded-ss-[0.556vw] rounded-se-[0.556vw] transition-colors duration-300 ${
@@ -76,7 +77,8 @@ export const Header = () => {
 						<div
 							onClick={() => {
 								setNavigateIsActive(i)
-								localStorage.setItem('headerNavigateNum', i.toString())
+								window &&
+									localStorage.setItem('headerNavigateNum', i.toString())
 							}}
 							className={`flex items-center justify-center h-[3.75vw] px-[1.111vw] rounded-ss-[0.556vw] rounded-se-[0.556vw] transition-colors duration-300 ${
 								navigateIsActive === i ? 'bg-primaryBlue' : ''
@@ -132,8 +134,8 @@ export const Header = () => {
 							<Button
 								onClick={() => {
 									router.push('/auth')
-									localStorage.removeItem('token')
-									localStorage.removeItem('headerNavigateNum')
+									window && localStorage.removeItem('token')
+									window && localStorage.removeItem('headerNavigateNum')
 								}}
 								className='w-full'
 							>
@@ -143,8 +145,8 @@ export const Header = () => {
 								<Button
 									onClick={() => {
 										router.push('/auth')
-										localStorage.removeItem('token')
-										localStorage.removeItem('headerNavigateNum')
+										window && localStorage.removeItem('token')
+										window && localStorage.removeItem('headerNavigateNum')
 									}}
 									className='w-full'
 								>
@@ -153,8 +155,8 @@ export const Header = () => {
 								<Button
 									onClick={() => {
 										router.push('/auth')
-										localStorage.removeItem('token')
-										localStorage.removeItem('headerNavigateNum')
+										window && localStorage.removeItem('token')
+										window && localStorage.removeItem('headerNavigateNum')
 									}}
 									className='w-full'
 								>

@@ -40,13 +40,13 @@ export function LoginForm() {
 
 	useEffect(() => {
 		if (data?.login?.access_token) {
-			localStorage.setItem('token', data.login.access_token)
+			window ? localStorage.setItem('token', data.login.access_token) : null
 			router.push('/')
 		}
 	}, [data, router])
 
 	useEffect(() => {
-		if (window && localStorage) {
+		if (window) {
 			const token = localStorage.getItem('token')
 			if (token) {
 				router.push('/')

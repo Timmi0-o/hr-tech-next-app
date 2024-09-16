@@ -6,8 +6,10 @@ import { useEffect } from 'react'
 export const useUser = () => {
 	const router = useRouter()
 	useEffect(() => {
-		if (!localStorage.getItem('token')) {
-			router.push('/auth')
+		if (typeof window !== 'undefined') {
+			if (!localStorage.getItem('token')) {
+				router.push('/auth')
+			}
 		}
 	}, [router])
 
